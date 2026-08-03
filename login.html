@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self'; script-src-attr 'none'; style-src 'self'; img-src 'self' data: https:; connect-src 'self' http://localhost:3000 https:; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="color-scheme" content="light dark">
+  <title>Entrar | Administração PC Builder</title>
+  <link rel="stylesheet" href="css/admin.css?v=6fbe08e9">
+</head>
+
+<body data-admin-login="true">
+  <main class="admin-login-page">
+    <section class="admin-login-card">
+      <div class="admin-login-side"><span class="admin-brand-mark">PB</span>
+        <h1>Painel administrativo</h1>
+        <p>Cadastre produtos e ofertas pelo celular ou computador. Depois da integração, o backend publicará os cards no
+          site automaticamente.</p>
+      </div>
+      <div class="admin-login-panel">
+        <h2>Entrar</h2>
+        <p>Acesso de demonstração do front-end administrativo.</p>
+        <form class="admin-login-form" id="admin-login-form">
+          <div class="admin-field"><label for="admin-email">E-mail</label><input class="admin-input" id="admin-email"
+              type="email" placeholder="admin@pcbuilder.local" autocomplete="email" required></div>
+          <div class="admin-field"><label for="admin-senha">Senha</label><input class="admin-input" id="admin-senha"
+              type="password" placeholder="Senha de demonstração" autocomplete="current-password" minlength="8"
+              required></div><button class="btn btn-primario" type="submit">Entrar no painel</button>
+        </form><button class="btn btn-secundario admin-login-demo" type="button" id="entrar-demo">Entrar em modo
+          demonstração</button>
+        <div class="admin-login-note">Neste momento, esta tela usa uma sessão local apenas para testar o visual. Na
+          integração final, a sessão e as permissões serão validadas pelo backend.</div>
+      </div>
+    </section>
+  </main>
+  <script src="js/config.js?v=659acce4"></script>
+  <script src="js/auth.js?v=4a586e41"></script>
+  <script src="js/login.js?v=d259742c"></script>
+</body>
+
+</html>P

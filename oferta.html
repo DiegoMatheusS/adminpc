@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; script-src-attr 'none'; style-src 'self'; img-src 'self' data: https:; connect-src 'self' http://localhost:3000 https:; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#1d4ed8">
+  <title>Oferta afiliada | Administração PC Builder</title>
+  <link rel="icon" href="../imagens/favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/admin.css?v=6fbe08e9">
+</head>
+<body data-admin-page="ofertas">
+  <div class="admin-shell">
+    <aside class="admin-sidebar" id="admin-sidebar" aria-label="Navegação administrativa">
+      <div class="admin-brand">
+        <a href="index.html" class="admin-brand-link"><span class="admin-brand-mark">PB</span><span><strong>PC Builder</strong><small>Administração</small></span></a>
+        <button class="admin-sidebar-close" type="button" data-fechar-menu aria-label="Fechar menu">×</button>
+      </div>
+      <nav class="admin-nav"><a class="admin-nav-link" data-admin-nav="dashboard" href="index.html"><span class="admin-nav-icon" aria-hidden="true">▦</span><span>Dashboard</span></a>
+<a class="admin-nav-link" data-admin-nav="produtos" href="produtos.html"><span class="admin-nav-icon" aria-hidden="true">▣</span><span>Produtos</span></a>
+<a class="admin-nav-link" data-admin-nav="ofertas" href="ofertas.html"><span class="admin-nav-icon" aria-hidden="true">R$</span><span>Ofertas afiliadas</span></a>
+<a class="admin-nav-link" data-admin-nav="parceiros" href="parceiros.html"><span class="admin-nav-icon" aria-hidden="true">◇</span><span>Parceiros</span></a>
+<a class="admin-nav-link" data-admin-nav="modelos" href="modelos-3d.html"><span class="admin-nav-icon" aria-hidden="true">◈</span><span>Modelos 3D</span></a>
+<a class="admin-nav-link" data-admin-nav="usuarios" href="usuarios.html"><span class="admin-nav-icon" aria-hidden="true">◎</span><span>Usuários</span></a></nav>
+      <div class="admin-sidebar-bottom">
+        <p>Modo local de demonstração. A segurança real será controlada pelo backend.</p>
+      </div>
+    </aside>
+    <div class="admin-overlay" data-fechar-menu></div>
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <button class="admin-menu-button" type="button" data-abrir-menu aria-label="Abrir menu">☰</button>
+        <div class="admin-topbar-title"><strong>Oferta afiliada</strong><span>Cadastro rápido de preço e links</span></div>
+        <div class="admin-topbar-actions">
+          <button class="admin-icon-button" type="button" data-alternar-tema aria-label="Alternar tema" title="Alternar tema">◐</button>
+          <div class="admin-user-menu">
+            <button class="admin-user-button" type="button" data-user-menu aria-haspopup="true" aria-expanded="false">
+              <span class="admin-avatar" data-admin-iniciais>AD</span>
+              <span class="admin-user-text"><strong data-admin-nome>Administrador</strong><small data-admin-papel>ADMIN</small></span>
+              <span aria-hidden="true">▾</span>
+            </button>
+            <div class="admin-user-dropdown" role="menu">
+              <a href="usuarios.html" role="menuitem">Minha conta</a>
+              <button type="button" data-admin-sair role="menuitem">Sair</button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="admin-content" id="conteudo-principal"><header class="admin-page-header"><div><h1 id="oferta-form-titulo">Cadastrar oferta</h1><p>Fluxo rápido para colar o link de afiliado pelo celular.</p></div><div class="admin-actions"><a class="btn btn-secundario" href="ofertas.html">Cancelar</a></div></header><form id="oferta-form" class="admin-form-layout"><div class="admin-form-card"><section class="admin-form-section"><h2>Produto e parceiro</h2><div class="admin-form-grid"><div class="admin-field full"><label for="produtoId">Produto</label><select class="admin-select" id="produtoId" name="produtoId" required></select></div><div class="admin-field"><label for="parceiroId">Parceiro afiliado</label><select class="admin-select" id="parceiroId" name="parceiroId" required></select></div><div class="admin-field"><label for="status">Status</label><select class="admin-select" id="status" name="status"><option>RASCUNHO</option><option>PUBLICADO</option><option>DESATIVADO</option></select></div><div class="admin-field full"><label for="titulo">Título da oferta</label><input class="admin-input" id="titulo" name="titulo" required maxlength="220"></div><div class="admin-field"><label for="codigoExterno">Código externo</label><input class="admin-input" id="codigoExterno" name="codigoExterno" maxlength="100"></div><div class="admin-field"><label for="emEstoque">Estoque</label><select class="admin-select" id="emEstoque" name="emEstoque"><option value="true">Disponível</option><option value="false">Indisponível</option></select></div></div></section><section class="admin-form-section"><h2>Preço</h2><div class="admin-form-grid"><div class="admin-field"><label for="preco">Preço atual</label><input class="admin-input" id="preco" name="preco" type="number" min="0" step="0.01" required></div><div class="admin-field"><label for="precoAnterior">Preço anterior</label><input class="admin-input" id="precoAnterior" name="precoAnterior" type="number" min="0" step="0.01"></div><div class="admin-field"><label for="validadeAte">Validade da oferta</label><input class="admin-input" id="validadeAte" name="validadeAte" type="datetime-local"></div><div class="admin-field"><label for="freteInfo">Informação de frete</label><input class="admin-input" id="freteInfo" name="freteInfo" maxlength="120" placeholder="Não incluído, grátis ou calculado na loja"></div></div></section><section class="admin-form-section"><h2>Links e verificação</h2><div class="admin-form-grid"><div class="admin-field full"><label for="urlOriginal">URL original do produto</label><input class="admin-input" id="urlOriginal" name="urlOriginal" type="url" placeholder="https://..." required></div><div class="admin-field full"><label for="urlAfiliado">URL de afiliado</label><input class="admin-input" id="urlAfiliado" name="urlAfiliado" type="url" placeholder="https://..." required><small>Este será o endereço usado no botão de compra.</small></div><div class="admin-field"><label for="verificadoEm">Última verificação</label><input class="admin-input" id="verificadoEm" name="verificadoEm" type="datetime-local"></div><div class="admin-field"><label>&nbsp;</label><button class="btn btn-secundario" id="validar-links-oferta" type="button">Validar links</button></div><div class="admin-import-status full" id="oferta-validacao-status" role="status" aria-live="polite" hidden></div></div></section><footer class="admin-form-footer"><button class="btn btn-secundario" id="salvar-oferta-rascunho" type="button">Salvar rascunho</button><button class="btn btn-primario" type="submit">Salvar oferta</button></footer></div><aside class="admin-sticky-side"><div class="admin-card"><header class="admin-card-header"><h2>Prévia do card</h2></header><div class="admin-card-body"><article class="admin-preview-card"><div class="admin-preview-image"><img id="oferta-preview-imagem" src="assets/placeholder-produto.svg" alt=""></div><div class="admin-preview-content"><small id="oferta-preview-parceiro">Parceiro</small><h3 id="oferta-preview-titulo">Título da oferta</h3><p id="oferta-preview-estoque">Disponível</p><strong class="admin-preview-price" id="oferta-preview-preco">R$ 0,00</strong><span class="admin-preview-discount" id="oferta-preview-desconto"></span><small id="oferta-preview-verificacao">Ainda não verificada</small></div></article></div></div><div class="admin-info-box">Os dados encontrados na importação do produto aparecem aqui para revisão. Preço, estoque, parceiro e link afiliado continuam editáveis.</div></aside></form></main>
+    </div>
+  </div>
+  <div class="admin-toast-region" aria-live="polite" aria-atomic="true"></div>
+  <dialog class="admin-dialog" id="admin-confirm-dialog">
+    <form method="dialog">
+      <h2 data-dialog-title>Confirmar ação</h2>
+      <p data-dialog-message></p>
+      <div class="admin-dialog-actions"><button value="cancel" class="btn btn-secundario">Cancelar</button><button value="confirm" class="btn btn-perigo">Confirmar</button></div>
+    </form>
+  </dialog>
+  <script src="js/config.js?v=659acce4"></script>
+<script src="js/store.js?v=e7a55e7b"></script>
+<script src="js/auth.js?v=4a586e41"></script>
+<script src="js/layout.js?v=dceedf7c"></script>
+<script src="js/oferta-form.js?v=514a9ce1"></script>
+<script src="js/ia-assistente-admin.js"></script>
+</body>
+</html>

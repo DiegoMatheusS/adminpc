@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; script-src-attr 'none'; style-src 'self'; img-src 'self' data: https:; connect-src 'self' http://localhost:3000 https:; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#1d4ed8">
+  <title>Parceiros | Administração PC Builder</title>
+  <link rel="icon" href="../imagens/favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/admin.css?v=6fbe08e9">
+</head>
+<body data-admin-page="parceiros">
+  <div class="admin-shell">
+    <aside class="admin-sidebar" id="admin-sidebar" aria-label="Navegação administrativa">
+      <div class="admin-brand">
+        <a href="index.html" class="admin-brand-link"><span class="admin-brand-mark">PB</span><span><strong>PC Builder</strong><small>Administração</small></span></a>
+        <button class="admin-sidebar-close" type="button" data-fechar-menu aria-label="Fechar menu">×</button>
+      </div>
+      <nav class="admin-nav"><a class="admin-nav-link" data-admin-nav="dashboard" href="index.html"><span class="admin-nav-icon" aria-hidden="true">▦</span><span>Dashboard</span></a>
+<a class="admin-nav-link" data-admin-nav="produtos" href="produtos.html"><span class="admin-nav-icon" aria-hidden="true">▣</span><span>Produtos</span></a>
+<a class="admin-nav-link" data-admin-nav="ofertas" href="ofertas.html"><span class="admin-nav-icon" aria-hidden="true">R$</span><span>Ofertas afiliadas</span></a>
+<a class="admin-nav-link" data-admin-nav="parceiros" href="parceiros.html"><span class="admin-nav-icon" aria-hidden="true">◇</span><span>Parceiros</span></a>
+<a class="admin-nav-link" data-admin-nav="modelos" href="modelos-3d.html"><span class="admin-nav-icon" aria-hidden="true">◈</span><span>Modelos 3D</span></a>
+<a class="admin-nav-link" data-admin-nav="usuarios" href="usuarios.html"><span class="admin-nav-icon" aria-hidden="true">◎</span><span>Usuários</span></a></nav>
+      <div class="admin-sidebar-bottom">
+        <p>Modo local de demonstração. A segurança real será controlada pelo backend.</p>
+      </div>
+    </aside>
+    <div class="admin-overlay" data-fechar-menu></div>
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <button class="admin-menu-button" type="button" data-abrir-menu aria-label="Abrir menu">☰</button>
+        <div class="admin-topbar-title"><strong>Parceiros</strong><span>Programas de afiliados e integrações</span></div>
+        <div class="admin-topbar-actions">
+          <button class="admin-icon-button" type="button" data-alternar-tema aria-label="Alternar tema" title="Alternar tema">◐</button>
+          <div class="admin-user-menu">
+            <button class="admin-user-button" type="button" data-user-menu aria-haspopup="true" aria-expanded="false">
+              <span class="admin-avatar" data-admin-iniciais>AD</span>
+              <span class="admin-user-text"><strong data-admin-nome>Administrador</strong><small data-admin-papel>ADMIN</small></span>
+              <span aria-hidden="true">▾</span>
+            </button>
+            <div class="admin-user-dropdown" role="menu">
+              <a href="usuarios.html" role="menuitem">Minha conta</a>
+              <button type="button" data-admin-sair role="menuitem">Sair</button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="admin-content" id="conteudo-principal"><header class="admin-page-header"><div><h1>Parceiros afiliados</h1><p>Cadastre lojas e marketplaces sem criar colunas específicas para cada parceiro.</p></div></header><section class="admin-form-card" style="margin-bottom:18px"><form id="parceiro-form"><section class="admin-form-section"><h2 id="parceiro-form-titulo">Novo parceiro</h2><div class="admin-form-grid"><input type="hidden" id="parceiro-id"><div class="admin-field"><label for="parceiro-nome">Nome</label><input class="admin-input" id="parceiro-nome" required></div><div class="admin-field"><label for="parceiro-sigla">Sigla</label><input class="admin-input" id="parceiro-sigla" maxlength="4" required></div><div class="admin-field"><label for="parceiro-modo">Atualização</label><select class="admin-select" id="parceiro-modo"><option>MANUAL</option><option>API</option><option>FEED</option><option>DEEP_LINK</option></select></div><div class="admin-field"><label for="parceiro-url">URL do programa</label><input class="admin-input" id="parceiro-url" type="url"></div></div></section><footer class="admin-form-footer"><button class="btn btn-secundario" id="cancelar-parceiro" type="button">Limpar</button><button class="btn btn-primario" type="submit">Salvar parceiro</button></footer></form></section><section class="admin-partner-grid" id="parceiros-grid"></section></main>
+    </div>
+  </div>
+  <div class="admin-toast-region" aria-live="polite" aria-atomic="true"></div>
+  <dialog class="admin-dialog" id="admin-confirm-dialog">
+    <form method="dialog">
+      <h2 data-dialog-title>Confirmar ação</h2>
+      <p data-dialog-message></p>
+      <div class="admin-dialog-actions"><button value="cancel" class="btn btn-secundario">Cancelar</button><button value="confirm" class="btn btn-perigo">Confirmar</button></div>
+    </form>
+  </dialog>
+  <script src="js/config.js?v=659acce4"></script>
+<script src="js/store.js?v=e7a55e7b"></script>
+<script src="js/auth.js?v=4a586e41"></script>
+<script src="js/layout.js?v=dceedf7c"></script>
+<script src="js/parceiros.js?v=252ecfe3"></script>
+<script src="js/ia-assistente-admin.js"></script>
+</body>
+</html>

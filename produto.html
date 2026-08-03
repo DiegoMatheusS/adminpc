@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; script-src-attr 'none'; style-src 'self'; img-src 'self' data: https:; connect-src 'self' http://localhost:3000 https:; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#1d4ed8">
+  <title>Produto | Administração PC Builder</title>
+  <link rel="icon" href="../imagens/favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/admin.css?v=6fbe08e9">
+</head>
+<body data-admin-page="produtos">
+  <div class="admin-shell">
+    <aside class="admin-sidebar" id="admin-sidebar" aria-label="Navegação administrativa">
+      <div class="admin-brand">
+        <a href="index.html" class="admin-brand-link"><span class="admin-brand-mark">PB</span><span><strong>PC Builder</strong><small>Administração</small></span></a>
+        <button class="admin-sidebar-close" type="button" data-fechar-menu aria-label="Fechar menu">×</button>
+      </div>
+      <nav class="admin-nav"><a class="admin-nav-link" data-admin-nav="dashboard" href="index.html"><span class="admin-nav-icon" aria-hidden="true">▦</span><span>Dashboard</span></a>
+<a class="admin-nav-link" data-admin-nav="produtos" href="produtos.html"><span class="admin-nav-icon" aria-hidden="true">▣</span><span>Produtos</span></a>
+<a class="admin-nav-link" data-admin-nav="ofertas" href="ofertas.html"><span class="admin-nav-icon" aria-hidden="true">R$</span><span>Ofertas afiliadas</span></a>
+<a class="admin-nav-link" data-admin-nav="parceiros" href="parceiros.html"><span class="admin-nav-icon" aria-hidden="true">◇</span><span>Parceiros</span></a>
+<a class="admin-nav-link" data-admin-nav="modelos" href="modelos-3d.html"><span class="admin-nav-icon" aria-hidden="true">◈</span><span>Modelos 3D</span></a>
+<a class="admin-nav-link" data-admin-nav="usuarios" href="usuarios.html"><span class="admin-nav-icon" aria-hidden="true">◎</span><span>Usuários</span></a></nav>
+      <div class="admin-sidebar-bottom">
+        <p>Modo local de demonstração. A segurança real será controlada pelo backend.</p>
+      </div>
+    </aside>
+    <div class="admin-overlay" data-fechar-menu></div>
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <button class="admin-menu-button" type="button" data-abrir-menu aria-label="Abrir menu">☰</button>
+        <div class="admin-topbar-title"><strong>Produto</strong><span>Cadastro e edição da ficha técnica</span></div>
+        <div class="admin-topbar-actions">
+          <button class="admin-icon-button" type="button" data-alternar-tema aria-label="Alternar tema" title="Alternar tema">◐</button>
+          <div class="admin-user-menu">
+            <button class="admin-user-button" type="button" data-user-menu aria-haspopup="true" aria-expanded="false">
+              <span class="admin-avatar" data-admin-iniciais>AD</span>
+              <span class="admin-user-text"><strong data-admin-nome>Administrador</strong><small data-admin-papel>ADMIN</small></span>
+              <span aria-hidden="true">▾</span>
+            </button>
+            <div class="admin-user-dropdown" role="menu">
+              <a href="usuarios.html" role="menuitem">Minha conta</a>
+              <button type="button" data-admin-sair role="menuitem">Sair</button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="admin-content" id="conteudo-principal"><header class="admin-page-header"><div><h1 id="produto-form-titulo">Cadastrar produto</h1><p>Cadastre a ficha técnica uma vez; depois associe várias ofertas de lojas.</p></div><div class="admin-actions"><a class="btn btn-secundario" href="produtos.html">Cancelar</a></div></header><form id="produto-form" class="admin-form-layout"><div class="admin-form-card"><section class="admin-form-section admin-import-section"><div class="admin-section-heading"><div><h2>Importar por link</h2><p>Cole a página original da loja para tentar preencher a ficha técnica. O link afiliado será levado para a oferta depois que o produto for salvo.</p></div><span class="admin-import-badge">Opcional</span></div><div class="admin-form-grid"><div class="admin-field full"><label for="urlOriginalImportacao">Link original do produto</label><input class="admin-input" id="urlOriginalImportacao" type="url" inputmode="url" placeholder="https://loja.com/produto"><small>Usado somente para consultar os dados e preparar a oferta.</small></div><div class="admin-field full"><label for="urlAfiliadoImportacao">Link de afiliado</label><input class="admin-input" id="urlAfiliadoImportacao" type="url" inputmode="url" placeholder="https://..."><small>Este endereço não será gravado na ficha técnica do produto.</small></div><div class="admin-field full"><div class="admin-import-actions"><button class="btn btn-primario" id="buscar-dados-produto" type="button">Buscar dados</button><button class="btn btn-secundario btn-ia" id="btn-ia-normalizar" type="button">✦ Organizar com IA</button><button class="btn btn-secundario" id="limpar-importacao" type="button">Limpar links</button></div></div><label class="admin-checkbox full" for="abrir-oferta-apos-salvar"><input id="abrir-oferta-apos-salvar" type="checkbox" checked><span>Após salvar o produto, abrir o cadastro da oferta com os links preenchidos.</span></label><div class="admin-import-status full" id="importacao-status" role="status" aria-live="polite" hidden></div></div></section><section class="admin-form-section"><h2>Identificação</h2><div class="admin-form-grid"><div class="admin-field full"><label for="nome">Nome do produto</label><input class="admin-input" id="nome" name="nome" required maxlength="180"></div><div class="admin-field"><label for="categoria">Categoria</label><select class="admin-select" id="categoria" name="categoria" required><option value="">Selecione</option><option>Processador</option><option>Placa de vídeo</option><option>Placa-mãe</option><option>Memória</option><option>Armazenamento</option><option>Fonte</option><option>Gabinete</option><option>Cooler</option><option>Notebook</option><option>PC montado</option><option>Monitor</option><option>Periférico</option></select></div><div class="admin-field"><label for="fabricante">Fabricante</label><input class="admin-input" id="fabricante" name="fabricante" required maxlength="100"></div><div class="admin-field"><label for="modelo">Modelo</label><input class="admin-input" id="modelo" name="modelo" maxlength="150"></div><div class="admin-field"><label for="mpn">MPN / código do fabricante</label><input class="admin-input" id="mpn" name="mpn" maxlength="100"></div><div class="admin-field"><label for="gtin">GTIN / EAN</label><input class="admin-input" id="gtin" name="gtin" inputmode="numeric" maxlength="14" aria-describedby="gtin-ajuda"><small id="gtin-ajuda">Aceita GTIN-8, GTIN-12, GTIN-13 ou GTIN-14.</small></div><div class="admin-field"><label for="status">Status</label><select class="admin-select" id="status" name="status"><option>RASCUNHO</option><option>AGUARDANDO_REVISAO</option><option>PUBLICADO</option><option>ARQUIVADO</option></select></div></div><div class="admin-import-status full" id="validacao-identificadores" role="status" aria-live="polite" hidden></div></section><section class="admin-form-section" id="secao-especificacoes-categoria"><div class="admin-section-heading"><div><h2>Compatibilidade por categoria</h2><p>Os campos mudam conforme a categoria e alimentam as regras do montador.</p></div><span class="admin-import-badge" id="categoria-tecnica-badge">Selecione a categoria</span></div><div class="admin-form-grid" id="campos-tecnicos-categoria"><div class="admin-empty full">Escolha uma categoria para exibir os campos técnicos.</div></div></section><section class="admin-form-section"><h2>Especificações principais</h2><div class="admin-form-grid"><div class="admin-field"><label for="consumoWatts">Consumo / potência (W)</label><input class="admin-input" id="consumoWatts" name="consumoWatts" type="number" min="0" step="1"></div><div class="admin-field"><label for="larguraMm">Largura (mm)</label><input class="admin-input" id="larguraMm" name="larguraMm" type="number" min="0" step="0.1"></div><div class="admin-field"><label for="alturaMm">Altura (mm)</label><input class="admin-input" id="alturaMm" name="alturaMm" type="number" min="0" step="0.1"></div><div class="admin-field"><label for="profundidadeMm">Profundidade / comprimento (mm)</label><input class="admin-input" id="profundidadeMm" name="profundidadeMm" type="number" min="0" step="0.1"></div><div class="admin-field full"><label for="descricao">Descrição</label><textarea class="admin-textarea" id="descricao" name="descricao" maxlength="1200"></textarea></div></div></section><section class="admin-form-section"><h2>Origem e imagem</h2><div class="admin-form-grid"><div class="admin-field full"><label for="urlOficial">Página oficial do fabricante</label><input class="admin-input" id="urlOficial" name="urlOficial" type="url" placeholder="https://..."></div><div class="admin-field full"><label for="imagemUrl">URL da imagem autorizada</label><input class="admin-input" id="imagemUrl" name="imagemUrl" type="text" value="assets/placeholder-produto.svg"><small>Na integração real, a origem e a autorização da imagem serão registradas.</small></div></div></section><footer class="admin-form-footer"><button class="btn btn-secundario" type="button" id="salvar-rascunho">Salvar rascunho</button><button class="btn btn-primario" type="submit">Salvar produto</button></footer></div><aside class="admin-sticky-side"><div class="admin-card"><header class="admin-card-header"><h2>Pré-visualização</h2></header><div class="admin-card-body"><article class="admin-preview-card"><div class="admin-preview-image"><img id="preview-imagem" src="assets/placeholder-produto.svg" alt="Prévia do produto"></div><div class="admin-preview-content"><span class="admin-status status-rascunho" id="preview-status">Rascunho</span><h3 id="preview-nome">Nome do produto</h3><p id="preview-descricao">A descrição aparecerá aqui.</p><strong class="admin-preview-price">Preço nas ofertas</strong></div></article></div></div><div class="admin-info-box">O produto guarda somente a ficha técnica. Quando a importação estiver ativa, os links serão transferidos para <strong>Ofertas</strong> após o salvamento.</div><div class="admin-info-box" id="status-rascunho-automatico">Rascunho automático ativo neste navegador.</div></aside></form></main>
+    </div>
+  </div>
+  <div class="admin-toast-region" aria-live="polite" aria-atomic="true"></div>
+  <dialog class="admin-dialog" id="admin-confirm-dialog">
+    <form method="dialog">
+      <h2 data-dialog-title>Confirmar ação</h2>
+      <p data-dialog-message></p>
+      <div class="admin-dialog-actions"><button value="cancel" class="btn btn-secundario">Cancelar</button><button value="confirm" class="btn btn-perigo">Confirmar</button></div>
+    </form>
+  </dialog>
+  <script src="js/config.js?v=659acce4"></script>
+<script src="js/store.js?v=e7a55e7b"></script>
+<script src="js/auth.js?v=4a586e41"></script>
+<script src="js/layout.js?v=dceedf7c"></script>
+<script src="js/produto-importador.js?v=e06d12ce"></script>
+<script src="js/produto-form.js?v=a3ea574c"></script>
+<script src="js/ia-admin.js"></script>
+<script src="js/ia-assistente-admin.js"></script>
+</body>
+</html>
