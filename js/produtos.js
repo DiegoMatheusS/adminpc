@@ -9,7 +9,8 @@
   }
 
   function menuAcoes(produto) {
-    return `<div class="admin-row-actions"><a class="admin-action-button" href="produto.html?id=${produto.id}">Editar</a><details class="admin-actions-menu"><summary class="admin-action-button" aria-label="Mais ações">⋮</summary><div class="admin-actions-menu-panel"><a href="oferta.html?produtoId=${produto.id}">Cadastrar oferta</a><button type="button" data-duplicar="${produto.id}">Duplicar como rascunho</button><button type="button" class="acao-perigosa" data-excluir="${produto.id}">Excluir produto</button></div></details></div>`;
+    const hrefEditar = produto.categoria === 'Notebook' ? `notebook.html?id=${produto.id}` : `produto.html?id=${produto.id}`;
+    return `<div class="admin-row-actions"><a class="admin-action-button" href="${hrefEditar}">Editar</a><details class="admin-actions-menu"><summary class="admin-action-button" aria-label="Mais ações">⋮</summary><div class="admin-actions-menu-panel"><a href="oferta.html?produtoId=${produto.id}">Cadastrar oferta</a><button type="button" data-duplicar="${produto.id}">Duplicar como rascunho</button><button type="button" class="acao-perigosa" data-excluir="${produto.id}">Excluir produto</button></div></details></div>`;
   }
 
   function render() {

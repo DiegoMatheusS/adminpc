@@ -105,14 +105,32 @@
         Object.entries(mapaForm).forEach(([chaveIa, chaveForm]) => {
           if (!campos[chaveIa]) return;
           const el = document.getElementById(chaveForm) || document.querySelector(`[name="${chaveForm}"]`);
-          if (!el || el.value.trim()) return; // não sobrescreve campo já preenchido
+          if (!el || String(el.value || '').trim()) return; // não sobrescreve campo já preenchido
           el.value = String(campos[chaveIa]);
           el.closest?.('.admin-field')?.classList.add('foi-importado');
+          el.dispatchEvent(new Event('input', { bubbles: true }));
           aplicados++;
         });
-
-        // Atualiza preview se disponível
-        if (typeof preview === 'function') preview();
+        // Campos técnicos: funciona também no cadastro dedicado de notebook.
+        const aliasesTecnicos = {
+          processador: 'processadorResumo', cpu: 'processadorResumo', nucleos: 'cpuNucleos', threads: 'cpuThreads',
+          clockBaseGhz: 'cpuClockBaseGhz', clockTurboGhz: 'cpuClockTurboGhz', tdpWatts: 'cpuTdpWatts',
+          gpu: 'gpuResumo', placaVideo: 'gpuResumo', vramGb: 'gpuVramGb', tgpWatts: 'gpuTgpWatts',
+          ramGb: 'ramInstaladaGb', memoriaRamGb: 'ramInstaladaGb', tipoRam: 'tipoMemoria', frequenciaRamMhz: 'frequenciaRamMhz',
+          armazenamento: 'armazenamentoResumo', armazenamentoGb: 'armazenamentoGb',
+          telaPolegadas: 'telaPolegadas', resolucao: 'resolucao', taxaHz: 'taxaHz', painel: 'tipoPainel',
+          bateriaWh: 'bateriaWh', pesoKg: 'pesoKg', wifi: 'wifi', bluetooth: 'bluetooth', sistemaOperacional: 'sistemaOperacional'
+        };
+        Object.entries(campos).forEach(([chaveIa, valor]) => {
+          if (valor === null || valor === undefined || valor === '' || mapaForm[chaveIa]) return;
+          const chaveTecnica = aliasesTecnicos[chaveIa] || chaveIa;
+          const el = document.querySelector(`[name="tecnico.${CSS.escape(chaveTecnica)}"]`);
+          if (!el || String(el.value || '').trim()) return;
+          el.value = String(valor);
+          el.closest?.('.admin-field')?.classList.add('foi-importado');
+          el.dispatchEvent(new Event('input', { bubbles: true }));
+          aplicados++;
+        });
 
         const alertasHtml = res.alertas?.length
           ? `<ul class="admin-ia-lista-alertas">${res.alertas.map(a => `<li>⚠ ${esc(a)}</li>`).join('')}</ul>` : '';

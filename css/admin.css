@@ -356,3 +356,10 @@ body[data-admin-role="REVISOR"] #resetar-dados { display: none; }
 @media (max-width: 768px) {
   .admin-ia-painel { top: 0; width: 100vw; border-left: 0; }
 }
+
+/* ── Cadastro dedicado de notebooks ── */
+.admin-notebook-preview-specs { margin: 8px 0; color: var(--admin-muted); font-size: 12px; line-height: 1.55; }
+body[data-admin-page="notebooks"] .admin-table th:nth-child(2),
+body[data-admin-page="notebooks"] .admin-table th:nth-child(3),
+body[data-admin-page="notebooks"] .admin-table td:nth-child(2),
+body[data-admin-page="notebooks"] .admin-table td:nth-child(3) { min-width: 150px; }

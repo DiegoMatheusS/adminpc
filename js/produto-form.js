@@ -49,7 +49,18 @@
       ['alturaCoolerMm', 'Altura (mm)', 'number'], ['tamanhoRadiadorMm', 'Radiador (mm)', 'number'], ['tdpSuportadoWatts', 'TDP suportado (W)', 'number']
     ],
     'Notebook': [
-      ['processadorResumo', 'Processador', 'text'], ['gpuResumo', 'GPU', 'text'], ['ramResumo', 'Memória RAM', 'text'], ['armazenamentoResumo', 'Armazenamento', 'text'], ['telaResumo', 'Tela', 'text']
+      ['processadorResumo', 'Processador', 'text', 'Ex.: Intel Core i5-13420H'], ['cpuNucleos', 'Núcleos do processador', 'number'], ['cpuThreads', 'Threads do processador', 'number'],
+      ['cpuClockBaseGhz', 'Clock base (GHz)', 'number'], ['cpuClockTurboGhz', 'Clock turbo (GHz)', 'number'], ['cpuTdpWatts', 'TDP do processador (W)', 'number'],
+      ['gpuResumo', 'GPU principal', 'text', 'Ex.: GeForce RTX 4050 Laptop'], ['gpuVramGb', 'VRAM dedicada (GB)', 'number'], ['gpuTgpWatts', 'TGP da GPU (W)', 'number'],
+      ['ramInstaladaGb', 'RAM instalada (GB)', 'number'], ['tipoMemoria', 'Tipo de RAM', 'select', ['Não informado', 'DDR4', 'DDR5', 'LPDDR4X', 'LPDDR5', 'LPDDR5X']],
+      ['frequenciaRamMhz', 'Frequência da RAM (MHz)', 'number'], ['ramSoldadaGb', 'RAM soldada (GB)', 'number'], ['slotsRamTotal', 'Slots de RAM', 'number'], ['slotsRamLivres', 'Slots de RAM livres', 'number'], ['ramMaxGb', 'RAM máxima (GB)', 'number'],
+      ['upgradeRam', 'Upgrade de RAM', 'select', ['Não informado', 'Sim', 'Não', 'Parcial']],
+      ['armazenamentoResumo', 'Armazenamento principal', 'text', 'Ex.: SSD NVMe 512 GB'], ['armazenamentoGb', 'Capacidade principal (GB)', 'number'],
+      ['interfaceArmazenamento', 'Interface do armazenamento', 'select', ['Não informado', 'NVMe PCIe 5.0', 'NVMe PCIe 4.0', 'NVMe PCIe 3.0', 'SATA']], ['slotsM2Total', 'Slots M.2', 'number'], ['slotsM2Livres', 'Slots M.2 livres', 'number'], ['upgradeArmazenamento', 'Upgrade de armazenamento', 'select', ['Não informado', 'Sim', 'Não']],
+      ['telaPolegadas', 'Tela (pol.)', 'number'], ['resolucao', 'Resolução', 'text', 'Ex.: 1920x1080'], ['taxaHz', 'Taxa de atualização (Hz)', 'number'], ['tipoPainel', 'Tipo de painel', 'text', 'Ex.: IPS'], ['brilhoNits', 'Brilho (nits)', 'number'], ['touchscreen', 'Tela sensível ao toque', 'select', ['Não informado', 'Sim', 'Não']],
+      ['bateriaWh', 'Bateria (Wh)', 'number'], ['autonomiaHoras', 'Autonomia informada (h)', 'number'], ['carregadorWatts', 'Carregador (W)', 'number'], ['pesoKg', 'Peso (kg)', 'number'],
+      ['wifi', 'Wi-Fi', 'text', 'Ex.: Wi-Fi 6E'], ['bluetooth', 'Bluetooth', 'text', 'Ex.: 5.3'], ['usbA', 'Portas USB-A', 'number'], ['usbC', 'Portas USB-C', 'number'], ['hdmi', 'HDMI', 'text', 'Ex.: HDMI 2.1'], ['ethernet', 'Ethernet', 'select', ['Não informado', 'Sim', 'Não']],
+      ['sistemaOperacional', 'Sistema operacional', 'text', 'Ex.: Windows 11'], ['webcam', 'Webcam', 'text', 'Ex.: Full HD'], ['tecladoIluminado', 'Teclado iluminado', 'select', ['Não informado', 'Sim', 'Não']]
     ],
     'PC montado': [
       ['processadorResumo', 'Processador', 'text'], ['gpuResumo', 'GPU', 'text'], ['ramResumo', 'Memória RAM', 'text'], ['armazenamentoResumo', 'Armazenamento', 'text'], ['fonteResumo', 'Fonte', 'text']

@@ -14,6 +14,7 @@ window.AdminConfig = Object.freeze({
   permissoesPagina: Object.freeze({
     dashboard: ['ADMIN', 'EDITOR', 'REVISOR'],
     produtos: ['ADMIN', 'EDITOR', 'REVISOR'],
+    notebooks: ['ADMIN', 'EDITOR', 'REVISOR'],
     ofertas: ['ADMIN', 'EDITOR', 'REVISOR'],
     parceiros: ['ADMIN', 'EDITOR'],
     modelos: ['ADMIN', 'EDITOR', 'REVISOR'],

@@ -50,6 +50,14 @@
           dados.categorias = [...new Set((store.produtos || []).map(p => p.categoria).filter(Boolean))];
           dados.statusCounts = (store.produtos || []).reduce((acc, p) => { acc[p.status] = (acc[p.status] || 0) + 1; return acc; }, {});
           break;
+        case 'notebooks': {
+          const notebooks = (store.produtos || []).filter(p => p.categoria === 'Notebook');
+          dados.totalNotebooks = notebooks.length;
+          dados.publicados = notebooks.filter(p => p.status === 'PUBLICADO').length;
+          dados.aguardandoRevisao = notebooks.filter(p => p.status === 'AGUARDANDO_REVISAO').length;
+          dados.semMpn = notebooks.filter(p => !p.mpn).length;
+          break;
+        }
         case 'ofertas':
           dados.totalOfertas = store.ofertas?.length || 0;
           dados.parceiros = (store.parceiros || []).map(p => p.nome);
@@ -167,6 +175,8 @@
     const msgs = {
       dashboard: 'Olá! Posso analisar o catálogo, apontar pendências e sugerir o que priorizar. Como posso ajudar?',
       produtos: 'Posso ajudar a revisar produtos, apontar dados ausentes ou inconsistências. Qual produto quer analisar?',
+      notebooks: 'Posso revisar notebooks, identificar dados ausentes e ajudar a organizar especificações para comparação.',
+      notebook: 'Posso revisar este notebook, organizar as especificações técnicas ou gerar uma descrição. O que prefere?',
       produto: 'Posso revisar este produto, gerar uma descrição ou normalizar as especificações. O que prefere?',
       ofertas: 'Posso analisar suas ofertas, verificar preços desatualizados ou apontar inconsistências.',
       oferta: 'Posso ajudar a verificar esta oferta, calcular desconto ou identificar problemas.',
